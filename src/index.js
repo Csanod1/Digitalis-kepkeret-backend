@@ -27,6 +27,12 @@ class Kep{
     }
 }
 
+function darkMode(){
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}
+document.getElementById("darkmode").addEventListener("click", darkMode);
+
 function teszt(){
     console.log("Ez a teszt");
 }
@@ -39,14 +45,14 @@ function kepWidthChange(){
     document.getElementById("kep").style.width = document.getElementById("kepSzelessegModositas").value + "px";
 }
 function kepkeretVastagsagChange(){
-    document.getElementById("kep").style.border = document.getElementById("kepkeretVastagsagModositas").value + ", solid";
+    document.getElementById("kep").style.border = document.getElementById("kepkeretVastagsagModositas").value + "px solid";
 }
 function kepkeretSzinChange(){
-    document.getElementById("kep").style.borderBlockColor = document.getElementById("kepkeretSzinModositas").value;
+    document.getElementById("kep").style.borderColor = document.getElementById("kepkeretSzinModositas").value;
 }
 document.getElementById("tesztGomb").addEventListener("click", teszt);
 
 document.getElementById("kepURLModositas").addEventListener("change", kepURLChange);
 document.getElementById("kepSzelessegModositas").addEventListener("keyup", kepWidthChange);
-document.getElementById("keperetVastagsagModositas").addEventListener("keyup", kepkeretVastagsagChange);
+document.getElementById("kepkeretVastagsagModositas").addEventListener("keyup", kepkeretVastagsagChange);
 document.getElementById("kepkeretSzinModositas").addEventListener("keyup", kepkeretSzinChange);
